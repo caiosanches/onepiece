@@ -1,0 +1,113 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+/*criar contedudo no html pelo css <after> depois do elemento*/
+main::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg #000 40%, rgba(0, 0, 0, 65%) no-repeat);
+}
+
+main .personagem {
+    /*tirar as imagens da frente*/
+    display: none;
+    height: 100vh;
+}
+
+main .personagem.selecionado {
+    /*travar imagem fixa*/
+    display: block;
+}
+
+main .personagem .imagem{
+    width: 100%;
+    height: 100%;
+    /*mantem as medidas corretas e cobre tudo*/
+    object-fit: cover;
+}
+
+.conteudo {
+    /*colocar texto de forma absoluta*/
+    position: absolute;
+
+    /*jogou o texto para cima*/
+    top: 0;
+    left: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*altura minima total assim ativando justify-content*/
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1;
+}
+
+.conteudo .nome-personagem{
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao{
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "Rubik";
+    line-height: 24px;
+}
+
+.conteudo .logo{
+    background-image: url("../imagens/one-piece-logo.png");
+    /*deixar o logo por cima*/
+    background-size: cover;
+    /*definir uma altura e largura pois nao vem com*/
+    width: 230px;
+    height: 100px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+
+}
+
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.botoes .botao img{
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado{
+    transform: scale(1.5);
+    box-shadow: 0 0 10px #d9d9d9;
+    
+}
+
+
